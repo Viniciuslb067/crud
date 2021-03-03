@@ -1,7 +1,6 @@
 
 ## **O Projeto**
 
-<h4>Web</h4>
 
 É uma aplicação web simples que realiza as quatro operações básicas (criação, consulta, atualização e destruição de dados) um CRUD.
 <br>
