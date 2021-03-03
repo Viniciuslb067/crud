@@ -1,0 +1,37 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Bem-vindo <%= name %></p>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+<table class="table table-hover">
+  <%- include('./partials/messages') -%>
+    <thead>
+      <tr class="table-active">
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col" class="levels">Nível</th>
+          
+           <% if(admin[0] == email) { %>
+              <th scope="col" id="level">Ação</th>
+            <% } %> 
+
+      </tr>
+    </thead>
+    <tbody>
+    <% docs.forEach(function(details) { %>
+      <tr class="table-secondary">
+        <td><%= details.name %></td>
+        <td><%= details.email %></td>
+        <td><%= details.level %></td>
+        <% if (admin[0] == email) { %>
+        <td class="levels" ><a href="/users/edit/<%= details._id %>"><i class="fas fa-edit"></i></a>
+        <a href="/users/delete/<%= details._id %>"><i class="fas fa-trash"></i></a></td>
+        <% } %>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+
+    
+    
+    

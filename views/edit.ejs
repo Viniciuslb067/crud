@@ -1,0 +1,72 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i> Editar   
+        </h1>
+        <%- include('./partials/messages') -%>
+        <form action="/users/edit/<%= user._id %>" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="name"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Nome"
+              value="<% if (typeof user != 'undefined') { %><%= user.name %><% } %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Email"
+              value="<% if (typeof user != 'undefined') { %><%= user.email %><% } %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Nível</label>
+            <select 
+            id="level"
+            name="level"
+            class="form-control">
+            <option>Estagiário</option>
+            <option>Atendente</option>
+            <option>Vendedor</option>
+            <option>Gerente de vendas</option>
+            <option>Administrador</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Senha"
+              value=""
+            />
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirma senha</label>
+            <input
+              type="password"
+              id="password2"
+              name="password2"
+              class="form-control"
+              placeholder="Confirma senha"
+              value=""
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Editar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
